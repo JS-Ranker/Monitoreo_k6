@@ -8,7 +8,11 @@ export const GUEST_DATA = {
   rut: __ENV.GUEST_RUT || '11111111-1',
 };
 
-
+// Credenciales de login (considerar usar variables de entorno para producción)
+export const LOGIN_CREDENTIALS = {
+  rut: __ENV.LOGIN_RUT || '20.040.939-6',
+  password: __ENV.LOGIN_PASS || 'santaflow0.3',
+};
 
 // Configuración de AWS para screenshots
 export const SCREENSHOT_BUCKET = __ENV.SCREENSHOT_BUCKET || 'pcf-s3-cross-monitoreo-images';

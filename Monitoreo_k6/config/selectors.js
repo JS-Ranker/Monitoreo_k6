@@ -1,5 +1,6 @@
 // Selectores utilizados en el flujo de monitoreo
 export const SELECTORS = {
+  // Selectores existentes
   searchInput: '#search-input-desktop',
   searchButton: '#search-btn-desktop',
   productListSection: 'section[data-section-name="Lista productos"]',
@@ -24,9 +25,11 @@ export const SELECTORS = {
   paymentMethodRadio: (methodId) => `input[type="radio"][name="payment"][id="${methodId}"]`,
   payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]]',
 
-
-
-
-
-
+  // Nuevos selectores para el flujo de login
+  loginDropdown: '#login-dropdown',
+  loginMenuLink: 'a.dropdown-item[href*="login"]',
+  usernameInput: '#username',
+  passwordInput: '#password',
+  loginButton: '#kc-login',
+  logoutLink: 'a.dropdown-item[href*="logout"]'
 };
