@@ -1,6 +1,6 @@
 // Constantes globales para el monitoreo
 export const TARGET_URL = __ENV.TARGET_URL || 'https://www.pcfactory.cl/';
-export const SEARCH_TERM = __ENV.SEARCH_TERM || 'bolsa';
+export const SEARCH_TERM = __ENV.SEARCH_TERM || 'pendrive';
 export const GUEST_DATA = {
   name: __ENV.GUEST_NAME || 'Monitor Test',
   email: __ENV.GUEST_EMAIL || `test@test.cl`,
@@ -8,10 +8,10 @@ export const GUEST_DATA = {
   rut: __ENV.GUEST_RUT || '11111111-1',
 };
 
-// Credenciales de login (considerar usar variables de entorno para producción)
+// Credenciales de login 
 export const LOGIN_CREDENTIALS = {
   rut: __ENV.LOGIN_RUT || '20.040.939-6',
-  password: __ENV.LOGIN_PASS || 'santaflow0.3',
+  password: __ENV.LOGIN_PASS || 'Hect.0331',
 };
 
 // Configuración de AWS para screenshots
