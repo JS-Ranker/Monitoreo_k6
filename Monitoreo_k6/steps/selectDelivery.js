@@ -7,7 +7,7 @@ export async function selectDelivery(page, data) {
   await measureStep(page, 'Seleccionar despacho a domicilio', async (p) => {
     // Seleccionar la opción de despacho a domicilio
     const radio = p.locator(SELECTORS.deliveryRadio);
-    await radio.waitFor({ state: 'visible', timeout: TIMEOUTS.short });
+    await radio.waitFor({ state: 'visible', timeout: TIMEOUTS.element });
     await radio.click();
 
     

@@ -45,4 +45,3 @@ addressComplementInput: 'input[id="address-complement"][type="text"]',
 addressSaveButton: '//button[contains(text(), "Guardar dirección")]',
 confirmAddressButton: '//button[contains(text(), "Confirmar dirección")]'
 };
-
