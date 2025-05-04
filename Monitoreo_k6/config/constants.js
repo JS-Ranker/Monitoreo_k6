@@ -6,6 +6,14 @@ export const GUEST_DATA = {
   email: __ENV.GUEST_EMAIL || `test@test.cl`,
   phone: __ENV.GUEST_PHONE || '98765432',
   rut: __ENV.GUEST_RUT || '11111111-1',
+
+  
+  // Dirección para el flujo de despacho a domicilio
+  address: {
+    street: __ENV.GUEST_STREET || 'Av. Providencia',
+    number: __ENV.GUEST_NUMBER || '1234',
+    complement: __ENV.GUEST_COMPLEMENT || 'Depto 101',
+  }
 };
 
 // Credenciales de login 

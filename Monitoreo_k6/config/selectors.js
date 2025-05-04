@@ -25,11 +25,24 @@ export const SELECTORS = {
   paymentMethodRadio: (methodId) => `input[type="radio"][name="payment"][id="${methodId}"]`,
   payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]]',
 
-  // Nuevos selectores para el flujo de login
+  //  selectores para el flujo de login
   loginDropdown: '#login-dropdown',
   loginMenuLink: 'a.dropdown-item[href*="login"]',
   usernameInput: '#username',
   passwordInput: '#password',
   loginButton: '#kc-login',
-  logoutLink: 'a.dropdown-item[href*="logout"]'
+  logoutLink: 'a.dropdown-item[href*="logout"]',
+
+
+  //  selectores para el flujo de despacho a domicilio
+  deliveryRadio: '#dispatch',
+
+addressRegionSelect: 'select[id="address-region"]',
+addressCommuneSelect: 'select[id="address-commune"]',
+addressStreetInput: 'input[id="address-street"][type="text"]',
+addressNumberInput: 'input[id="address-number"][type="text"]',
+addressComplementInput: 'input[id="address-complement"][type="text"]',
+addressSaveButton: '//button[contains(text(), "Guardar dirección")]',
+confirmAddressButton: '//button[contains(text(), "Confirmar dirección")]'
 };
+
