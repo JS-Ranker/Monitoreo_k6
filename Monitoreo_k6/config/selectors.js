@@ -35,13 +35,14 @@ export const SELECTORS = {
 
 
   //  selectores para el flujo de despacho a domicilio
-  deliveryRadio: '#dispatch',
+  // Selector de despacho a domicilio actualizado con múltiples alternativas
+  deliveryRadio: 'input#dispatch, input[type="radio"][value="Despacho a Domicilio"], input[type="radio"][value*="despacho"], input[type="radio"][value*="Domicilio"]',
 
-addressRegionSelect: 'select[id="address-region"]',
-addressCommuneSelect: 'select[id="address-commune"]',
-addressStreetInput: 'input[id="address-street"][type="text"]',
-addressNumberInput: 'input[id="address-number"][type="text"]',
-addressComplementInput: 'input[id="address-complement"][type="text"]',
-addressSaveButton: '//button[contains(text(), "Guardar dirección")]',
-confirmAddressButton: '//button[contains(text(), "Confirmar dirección")]'
+  addressRegionSelect: 'select[id="address-region"]',
+  addressCommuneSelect: 'select[id="address-commune"]',
+  addressStreetInput: 'input[id="address-street"][type="text"]',
+  addressNumberInput: 'input[id="address-number"][type="text"]',
+  addressComplementInput: 'input[id="address-complement"][type="text"]',
+  addressSaveButton: '//button[contains(text(), "Guardar dirección")]',
+  confirmAddressButton: '//button[contains(text(), "Confirmar dirección")]'
 };
