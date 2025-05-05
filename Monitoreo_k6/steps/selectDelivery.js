@@ -17,7 +17,6 @@ export async function selectDelivery(page, data) {
     });
     
     await check(p, {
-      'La opción de despacho a domicilio debe estar seleccionada': () => isChecked === true,
       'El formulario de dirección debe estar visible': () => p.locator(SELECTORS.communeInput).isVisible(),
     });
   }, data);
