@@ -1,4 +1,3 @@
-// Selectores utilizados en el flujo de monitoreo
 export const SELECTORS = {
   // Selectores existentes
   searchInput: '#search-input-desktop',
@@ -33,5 +32,12 @@ export const SELECTORS = {
   loginButton: '#kc-login',
   logoutLink: 'a.dropdown-item[href*="logout"]',
 
-
+  // Selectores para despacho a domicilio
+  deliveryRadio: '//*[@id="pcf-checkout-view"]/div[1]/div[1]/div[2]/section[2]/div',
+  communeInput: '#commune-input',
+  communeDropdownItem: '.dropdown-item',
+  streetInput: '#street-input',
+  numberInput: '#number-input',
+  deptInput: '#apartment-input',
+  continueAddressBtn: '//div[@id="delivery-button"]//button[contains(text(), "Continuar")]',
 };
