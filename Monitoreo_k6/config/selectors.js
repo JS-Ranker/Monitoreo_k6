@@ -22,7 +22,7 @@ export const SELECTORS = {
   receiptRutInput: 'input[id="receipt-rut"][type="text"]',
   paymentMethodSection: '.p-0.m-0.ml-4',
   paymentMethodRadio: (methodId) => `input[type="radio"][name="payment"][id="${methodId}"]`,
-  payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]]',
+  payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]',
 
   //  selectores para el flujo de login
   loginDropdown: '#login-dropdown',
@@ -39,5 +39,9 @@ export const SELECTORS = {
   streetInput: '#street-input',
   numberInput: '#number-input',
   deptInput: '#apartment-input',
-  continueAddressBtn: '//div[@id="delivery-button"]//button[contains(text(), "Continuar")]',
+  continueAddressBtn: '//div[@id="delivery-button"]//button[contains(text(), "Continuar")]', 
+
+  // Nuevos selectores
+  productImage: 'img[data-gtag-title*="Pendrive"]',
+  agregarCarritoButton: '#agregar-carrito', // Nuevo selector para el botón "Agregar al carrito"
 };

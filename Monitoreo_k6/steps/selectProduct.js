@@ -8,18 +8,18 @@ export async function selectProduct(page, data) {
     const firstProduct = await p.$$(SELECTORS.productLink);
     if (firstProduct.length === 0) throw new Error("No hay productos para seleccionar.");
 
-    let foundBolsa = false;
+    let foundPendrive = false;
     for (let i = 0; i < firstProduct.length; i++) {
       const productText = await firstProduct[i].textContent();
-      if (productText.toLowerCase().includes('bolsa')) {
-        console.log(`Encontrado producto con "Bolsa" en la posición ${i + 1}`);
+      if (productText.toLowerCase().includes('pendrive')) {
+        console.log(`Encontrado producto con "Pendrive" en la posición ${i + 1}`);
         await firstProduct[i].click();
-        foundBolsa = true;
+        foundPendrive = true;
         break;
       }
     }
-    if (!foundBolsa) {
-      console.log('No se encontró producto con "Bolsa", seleccionando el primero');
+    if (!foundPendrive) {
+      console.log('No se encontró producto con "Pendrive", seleccionando el primero');
       await firstProduct[0].click();
     }
 
