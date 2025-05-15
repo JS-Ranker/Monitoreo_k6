@@ -4,10 +4,10 @@
 
 - **Subir productos al carro desde la pdp**    - Listo
 - **Subir productos al carro desde la plp**    - Listo
-- **Subir productos desde RR (Home)**          - Pendiente
+- **Subir productos desde RR (Home)**          - Listo
 - **Subir un producto desde el buscador**      - Listo
 - **Comprar con Todos los Medios de pagos**    - Listo
-
+- **Retiro en Tienda**                         - En Proceso
 
 ## Como Usuario Registrado
 
