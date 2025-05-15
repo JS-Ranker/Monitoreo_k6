@@ -22,7 +22,7 @@ export const SELECTORS = {
   receiptRutInput: 'input[id="receipt-rut"][type="text"]',
   paymentMethodSection: '.p-0.m-0.ml-4',
   paymentMethodRadio: (methodId) => `input[type="radio"][name="payment"][id="${methodId}"]`,
-  payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]',
+  payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]]',
 
   //  selectores para el flujo de login
   loginDropdown: '#login-dropdown',

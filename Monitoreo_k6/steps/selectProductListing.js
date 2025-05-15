@@ -5,11 +5,9 @@ import { measureStep } from '../helpers/measureStep.js';
 
 export async function selectProductListing(page, data) {
   await measureStep(page, 'Seleccionar producto y agregar al carrito', async (p) => {
-    // Obtener todos los productos
     const productItems = await p.$$(SELECTORS.productLink);
     if (productItems.length === 0) throw new Error("No hay productos para seleccionar.");
 
-    // Buscar un producto con "pendrive" en el texto
     let targetProductIndex = 0;
     let foundPendrive = false;
 
@@ -36,11 +34,9 @@ export async function selectProductListing(page, data) {
 
     console.log('Botón "Agregar al carrito" encontrado dentro del producto');
 
-    // Hacer clic en el botón de agregar al carrito
     await addToCartButtons[0].click();
     console.log('Clic en botón "Agregar al carrito" realizado');
 
-    // Esperar específicamente al botón "Ir al carro" que aparece en el modal
     try {
       const botonIrAlCarroSelector = 'a.pcf-btn--five[aria-label="ir al carrito de compra"]';
 
@@ -58,13 +54,45 @@ export async function selectProductListing(page, data) {
       await irAlCarro.click();
       console.log('Clic en "Ir al carro" realizado');
 
-      // Verificar navegación al carrito
-      await p.waitForURL('**/carro', { timeout: TIMEOUTS.navigation });
-      console.log('Navegación al carrito exitosa');
-    } catch (error) {
-      console.error(`Error al procesar el modal o el botón "Ir al carro": ${error.message}`);
+      let urlCambiada = false;
+      const timeoutMs = TIMEOUTS.navigation;
+      const start = Date.now();
 
-      // Capturar para depuración
+      while (Date.now() - start < timeoutMs) {
+        const currentUrl = page.url();
+        if (currentUrl.includes('/carro')) {
+          urlCambiada = true;
+          break;
+        }
+        await new Promise((resolve) => setTimeout(resolve, 200));
+      }
+
+      if (!urlCambiada) {
+        throw new Error(`No se detectó navegación al carrito dentro de ${timeoutMs} ms`);
+      }
+
+      console.log('Navegación al carrito exitosa');
+
+      // ✅ NUEVO PASO: hacer clic en "Continuar" para ir al checkout
+      const botonContinuarSelector = 'a.pcf-btn--five[aria-label="ir al checkout"]';
+
+      await p.waitForSelector(botonContinuarSelector, {
+        state: 'visible',
+        timeout: TIMEOUTS.element,
+      });
+
+      const botonContinuar = p.locator(botonContinuarSelector);
+      const continuarVisible = await botonContinuar.isVisible();
+
+      if (!continuarVisible) throw new Error('El botón "Continuar" no está visible en el carrito');
+
+      console.log('Botón "Continuar" visible. Haciendo clic...');
+      await botonContinuar.click();
+      console.log('Clic en "Continuar" hacia el checkout realizado');
+
+    } catch (error) {
+      console.error(`Error al procesar el flujo del carrito: ${error.message}`);
+
       await p.screenshot({ path: 'error_modal.png' });
       const html = await p.evaluate(() => document.body.innerHTML);
       console.log('HTML de la página para depuración:', html.substring(0, 500) + '...');

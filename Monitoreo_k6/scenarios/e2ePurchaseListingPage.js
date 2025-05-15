@@ -2,14 +2,12 @@ import { browser } from 'k6/browser';
 import { registerMetricTags } from '../helpers/registerMetricTags.js';
 import { TARGET_URL, SEARCH_TERM, GUEST_DATA } from '../config/constants.js';
 import { journeyDuration, journeySuccess } from '../metrics/metrics.js';
-
+ 
 // Importar directamente los archivos de pasos en lugar de las funciones
 import * as loadHomepageModule from '../steps/loadHomepage.js';
 import * as searchProductModule from '../steps/searchProduct.js';
 import * as sortResultsModule from '../steps/sortResults.js';
 import * as selectProductModule from '../steps/selectProductListing.js';
-import * as addToCartModule from '../steps/addToCart.js';
-import * as goToCheckoutModule from '../steps/goToCheckout.js';
 import * as continueAsGuestModule from '../steps/continueAsGuest.js';
 import * as selectPickupModule from '../steps/selectPickup.js';
 import * as goToPersonalInfoModule from '../steps/goToPersonalInfo.js';
@@ -41,7 +39,12 @@ export default async function (data) {
     await searchProductModule.searchProduct(page, data, SEARCH_TERM);
     await sortResultsModule.sortResults(page, data);
     await selectProductModule.selectProductListing(page, data);
-    
+    await continueAsGuestModule.continueAsGuest(page, data);
+    await selectPickupModule.selectPickup(page, data);
+    await goToPersonalInfoModule.goToPersonalInfo(page, data);
+    await fillPersonalInfoModule.fillPersonalInfo(page, data, GUEST_DATA);
+    await selectPaymentMethodModule.selectPaymentMethod(page, data, paymentMethodId, paymentMethodName);
+    await goToPaymentGatewayModule.goToPaymentGateway(page, data, paymentGatewayUrl);
 
 
     journeySuccessful = true;

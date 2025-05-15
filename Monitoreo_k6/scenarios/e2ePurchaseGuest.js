@@ -2,7 +2,7 @@ import { browser } from 'k6/browser';
 import { registerMetricTags } from '../helpers/registerMetricTags.js';
 import { TARGET_URL, SEARCH_TERM, GUEST_DATA } from '../config/constants.js';
 import { journeyDuration, journeySuccess } from '../metrics/metrics.js';
-
+ 
 // Importar directamente los archivos de pasos en lugar de las funciones
 import * as loadHomepageModule from '../steps/loadHomepage.js';
 import * as searchProductModule from '../steps/searchProduct.js';

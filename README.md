@@ -3,7 +3,7 @@
 ## Como Invitado
 
 - **Subir productos al carro desde la pdp**    - Listo
-- **Subir productos al carro desde la plp**    - En Proceso
+- **Subir productos al carro desde la plp**    - Listo
 - **Subir productos desde RR (Home)**          - Pendiente
 - **Subir un producto desde el buscador**      - Pendiente
 - **Comprar con Todos los Medios de pagos**    - Listo
