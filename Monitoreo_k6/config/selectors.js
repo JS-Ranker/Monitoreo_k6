@@ -41,7 +41,11 @@ export const SELECTORS = {
   deptInput: '#apartment-input',
   continueAddressBtn: '//div[@id="delivery-button"]//button[contains(text(), "Continuar")]', 
 
-  // Nuevos selectores
+  
   productImage: 'img[data-gtag-title*="Pendrive"]',
-  agregarCarritoButton: '#agregar-carrito', // Nuevo selector para el botón "Agregar al carrito"
+  agregarCarritoButton: '#agregar-carrito',
+
+  // Selectores de Selección por Categoría
+  categoriesButton: '//*[@id="categories-btn"]',
+  categoryItems: Array.from({ length: 16 }, (_, i) => `//*[@id="category${i}"]`)
 };
