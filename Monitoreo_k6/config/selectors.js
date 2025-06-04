@@ -9,7 +9,7 @@ export const SELECTORS = {
   productAddToCartBtn: '.pcf-btn.pcf-btn--five.d-none.d-lg-block.mt-1.border.border-0',
   modalGoToCartBtn: '.pcf-btn.pcf-btn--five.border-0',
   cartContinueBtn: '.pcf-btn.pcf-btn--five.w-100.text-center.border-0',
-  guestContinueBtn: '//button[normalize-space()="Continuar como invitado"]',
+  guestContinueBtn: '//*[@id="pcf-checkout-view"]/div[1]/div[1]/div[2]/div/div[2]/div/button',
   pickupRadio: '//*[@id="pcf-checkout-view"]/div[1]/div[1]/div[2]/section[1]/div',
   storeModal: '#select-store-modal',
   firstAvailableStoreRadio: 'input[type="radio"][name="store"]:not(.zone__store--disabled input)',
