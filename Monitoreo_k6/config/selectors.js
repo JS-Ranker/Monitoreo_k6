@@ -20,7 +20,10 @@ export const SELECTORS = {
   receiptEmailConfirmInput: 'input[id="receipt-email-confirmation"][type="text"]',
   receiptPhoneInput: 'input[id="receipt-phone-number"][type="text"]',
   receiptRutInput: 'input[id="receipt-rut"][type="text"]',
-  paymentMethodSection: '.p-0.m-0.ml-4',
+  paymentMethodSection: 'ul.p-0.m-0',
+
+
+  
   paymentMethodRadio: (methodId) => `input[type="radio"][name="payment"][id="${methodId}"]`,
   payButton: '//div[contains(@class, "divider-top")]//button[./span[normalize-space()="Pagar"]]',
 

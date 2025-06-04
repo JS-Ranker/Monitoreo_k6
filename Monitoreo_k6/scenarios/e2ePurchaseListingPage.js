@@ -4,7 +4,7 @@ import { TARGET_URL, SEARCH_TERM, GUEST_DATA } from '../config/constants.js';
 import { journeyDuration, journeySuccess } from '../metrics/metrics.js';
  
 // Importar directamente los archivos de pasos en lugar de las funciones
-import * as loadHomepageModule from '../steps/loadHomepage.js';
+import * as adminLoginModule from '../steps/adminLogin.js';
 import * as searchProductModule from '../steps/searchProduct.js';
 import * as sortResultsModule from '../steps/sortResults.js';
 import * as selectProductModule from '../steps/selectProductListing.js';
@@ -35,7 +35,7 @@ export default async function (data) {
 
   try {
     // Ejecutar paso a paso el flujo de compra
-    await loadHomepageModule.loadHomepage(page, data, TARGET_URL);
+     await adminLoginModule.adminLogin(page, data);
     await searchProductModule.searchProduct(page, data, SEARCH_TERM);
     await sortResultsModule.sortResults(page, data);
     await selectProductModule.selectProductListing(page, data);
