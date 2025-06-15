@@ -21,7 +21,7 @@ export const SELECTORS = {
   receiptPhoneInput: 'input[id="receipt-phone-number"][type="text"]',
   receiptRutInput: 'input[id="receipt-rut"][type="text"]',
   paymentMethodSection: 'ul.p-0.m-0',
-
+  bottonpay:'//*[@id="pcf-checkout-view"]/div[1]/div[2]/div/aside/div[4]/button/span',
 
   
   paymentMethodRadio: (methodId) => `input[type="radio"][name="payment"][id="${methodId}"]`,

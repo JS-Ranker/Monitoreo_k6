@@ -13,6 +13,17 @@ export async function goToPersonalInfo(page, data) {
       p.waitForNavigation({ waitUntil: 'load', timeout: TIMEOUTS.navigation }),
       p.locator(SELECTORS.checkoutContinueBtn).click(),
     ]);
+
+    await Promise.all([
+      p.waitForNavigation({ waitUntil: 'load', timeout: TIMEOUTS.navigation }),
+      p.locator(SELECTORS.bottonpay).waitFor({ state: 'visible', timeout: TIMEOUTS.element }),
+    ]);
+
+    // Hacemos clic en el botón de pagar
+    await Promise.all([
+      p.waitForNavigation({ waitUntil: 'load', timeout: TIMEOUTS.navigation }),
+      p.locator(SELECTORS.bottonpay).click(),
+    ]);
     
     // Esperamos a que el formulario de datos personales sea visible
     await p.locator(SELECTORS.receiptNameInput).waitFor({ state: 'visible', timeout: TIMEOUTS.element });
